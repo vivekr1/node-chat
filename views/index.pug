@@ -1,0 +1,40 @@
+doctype
+head
+    title Real time Chat
+    link(href="/components/bootstrap/dist/css/bootstrap.css"  , rel="stylesheet")
+    link(href="/css/style.css"  , rel="stylesheet")
+
+    script(src="/components/jquery/dist/jquery.min.js")
+    script(src="/components/bootstrap/dist/js/bootstrap.js")
+    script(src="/js/main.js") 
+    script(src="/socket.io/socket.io.js")
+    
+body
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+        .container-fluid
+            .navbar-nav
+                a.navbar-brand(href="/" ) echat
+    .container
+        .row    
+            .col-md-8
+                #userFormWrap
+                    h1 Create Username
+                    form#userForm
+                        input#username.form-control(type="text", placeholder="Enter username")
+                        br
+                        button.btn.btn-default(type="submit") Submit
+                #mainWrap
+                    h1 Broadcast Yourself
+                    form#chatForm
+                        .form-group
+                            textarea#chatInput.form-control(name="body", placeholder="say something..")
+                            br
+                            button.btn.btn-default(type="submit") Submit
+                            br
+                            br
+                            #chatWindow.well 
+            .col-md-4
+                h3 Chat users 
+                ul.list-group
+                    #users
+        
